@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'home' %}">AutoBuddie</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <form class="d-flex" method="get" action="{% url 'search' %}">
+      {% csrf_token %}
+      <input class="form-control me-2 searchbar" name="query" type="search" placeholder="Search" aria-label="Search" />
+      <button class="btn btn-outline-success btn-sm search-bar-button" type="submit">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </form>
+
+    {% if user.is_authenticated %}
+    <ul class="navbar-nav mb-2 mb-lg-0">
+      <div class="collapse navbar-collapse profileview" id="navbarNavDarkDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle languagebar" href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              {{user.username}}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" href="{% url 'profile' %}">view profile</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{% url 'home' %}">your postings</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{% url 'login' %}">drafts</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{% url 'login' %}">settings</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <a class="dropdown-item" href="{% url 'contactus' %}">Contact us</a>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <li class="nav-item">
+        <a href="{% url 'logout' %}">
+          <button type="submit" class="nav-btns btn btn-danger">Logout</button>
+        </a>
+      </li>
+    </ul>
+    {% else %}
+    <ul class="navbar-nav mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a href="{% url 'login' %}"><button type="submit" class="nav-btns btn login-button">
+            Login
+          </button></a>
+        <a href="{% url 'signup' %}"><button type="submit" class="nav-btns btn signup-button">
+            Sign-Up
+          </button></a>
+      </li>
+    </ul>
+
+    {% endif %}
+  </div>
+</nav>

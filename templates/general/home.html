@@ -1,0 +1,47 @@
+{% extends 'index.html' %} {% load static %} 
+
+
+{% block home_page %}
+
+<!-- row 2 -->
+
+<!-- navigation bar -->
+{% include 'includes/navbar.html' %}
+
+<!-- home page content -->
+<div class="container-fluid">
+  <div class="row">
+    <!-- <div class="col-auto p-0">{% include 'includes/sidebar.html' %}</div> -->
+    <div class="col  bg-light" style="padding-top: 64px">
+      <div class="container">
+        <div class="row">
+          {% for product in products %}
+          <div class="col-md-3">
+            <div style="height: 300px;overflow: auto;" class="card shadow-sm">
+              <div class="card-image">
+                <img style="height: 190px; width: 270px; " class="img ms-4 mt-1" src="{{product.image.url}}" alt="">
+              </div>
+              <p>
+              <i class="fa-solid fa-indian-rupee-sign ms-2"></i>
+              
+              </p>
+              
+              <a class="ms-2" href="{% url 'product_detail' product.id %}" class="btn btn-primary">{{product.name}}</a>
+                
+              
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<!-- footer  -->
+{% include 'includes/footer.html' %} {% endblock home_page %}
+
+<!-- home--products-list -->
+

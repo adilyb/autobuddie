@@ -1,0 +1,109 @@
+{% extends 'index.html' %}
+{% block product_detail %}
+
+{% include 'includes/navbar.html' %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-auto p-0">{% include 'includes/sidebar.html' %}</div>
+    <div class="col bg-light" style="padding-top: 64px;">
+      <div class="container">
+        <div class="contaniner-fluid px-3">
+          <div class="row">
+            <div class="col">
+              {% if user.is_staff %}
+              <table class="table table-hover">
+                <tbody>
+                  <tr>
+                    <th>Name</th>
+                    <td>{{object.name}}</td>
+                  </tr>
+                  <tr>
+                    <th>Description</th>
+                    <td>{{object.description}}</td>
+                  </tr>
+                  <tr>
+                    <th>Images</th>
+                    <td>{{object.image}}</td>
+                  </tr>
+                  <tr>
+                    <th>Is available</th>
+                    <td>{{object.is_available}}</td>
+                  </tr>
+                  <tr>
+                    <th>Status</th>
+                    <td>{{object.status}}</td>
+                  </tr>
+                  <tr>
+                    <th>Created on</th>
+                    <td>{{object.created_on}}</td>
+                  </tr>
+                  <tr>
+                    <th>Updated on</th>
+                    <td>{{object.updated_on}}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <a class="btn btn-primary" href="{% url 'product_update' object.id %}">Update</a>
+              {% else %}
+              <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="{{object.image.url}}" class="card-img-top" alt="" />
+                  </div>
+                </div>
+                {% comment %} <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                  data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                  data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span> 
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div> {% endcomment %}
+              <div class="mt-2">
+                <h3 class="">{{object.name | title}}</h3>
+                <p>{{object.description}}</p>
+                <p>price : {{object.price}}</p>
+              </div>
+              <p>uploaded by : {{object.uploaded_by}}</p>
+              <a href="{% url 'product_buy' object.id %}" class="btn btn-primary">i'm interested</a>
+              <br/>
+              <br/>
+              <br/>
+              <hr>
+              <div class="contaner">
+                <div class="row">
+                    {% for product in products %}
+                  <div class="col-lg-3 col-sm-12 mb-3">
+                    <div class="card " style="height: 350px">
+                      <div>
+                        <img src="{{product.image.url}}" class="card-img-top" style="height: 100px; overflow: hidden" alt="..." />
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">{{product.name}}</h5>
+                        <p class="card-text">
+                          <i class="fas fa-map-marker-alt"></i><span class="ms-1">{{product.address}}</span>
+                        </p>
+                      </div>
+                      <div class="p-3">
+                        <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">View</a>
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock product_detail %}
+
+

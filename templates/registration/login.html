@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block login_page %}
+
+{% include 'includes/navbar.html' %}
+
+<div class="container-fluid login-page">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col-lg-4">
+      <div class="card login">
+        {% comment %} <h1 class="login-header mt-2 d-flex align-items-center justify-content-center">Login</h1> {% endcomment %}
+        <div class="card-body">
+          <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <div>
+              <p ><a class="forgot-pass" href="{% url 'password_reset' %}">Forgot password?</a></p>
+            </div>
+            <button class="btn btn-dark w-100 login-btn mb-3">Sign in</button>
+            
+            <div class="register">
+              <p >Don't have an account? <a href="{% url 'signup' %}"> Sign up</a></p>
+            </div>
+          </form>
+        </div>
+        {% comment %} <div class="d-flex align-items-center justify-content-center">
+          <span> Or</span>
+        </div>
+        <div class="col social-link d-flex align-items-center justify-content-center">
+          <a href="{% url 'social:begin' 'github' %}" class="fb-btn">
+            <button class="github-btn" type="submit" title="Login with Github"> <i class="fab fa-github"></i></button>
+          </a>
+          <a href="#" class="fb-btn">
+            <button class="google-btn" type="submit" title="Login with Google"> <i class="fab fa-google"></i></button>
+          </a>
+        </div> {% endcomment %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock login_page %}
+
+    

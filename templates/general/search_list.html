@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block search %}
+<br>
+<br>
+
+<div class="container mt-5">
+  <div class="row">
+    {% if products %}
+    <div class="search--card d-flex flex-row">
+      {% for product in products %}
+      <div class="col-lg-3">
+        <div style="height: 450px; overflow: hidden;" class="card p-3">
+          <img src="{{product.image.url}}" alt="" srcset="">
+          <h2>{{product.name}}</h2>
+          <p class="des">
+            {{product.description}}
+          </p>
+          <a class="w-100 mt-auto" href="{% url 'product_detail' product.id %}">View details »</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% else %}
+<div class="container-fluid">
+  <div class="row noresult-page">
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <p class="search-icon d-flex align-items-center justify-content-center"><i class="fas fa-search-minus"></i></p>
+            <p class="d-flex align-items-center justify-content-center">No matching views</p>
+            <p class="d-flex align-items-center justify-content-center">There weren't any saved views</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endif %}
+
+
+{% endblock search %}

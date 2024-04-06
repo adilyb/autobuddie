@@ -1,0 +1,35 @@
+{% extends 'index.html' %} 
+{% block profile_update %}
+
+
+
+{% include 'includes/navbar.html' %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-auto p-0">{% include 'includes/sidebar.html' %}</div>
+    <div class="col bg-light" style="padding-top: 64px;">
+      <div class="container">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col">
+              <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table>
+                  {{form.as_table}}
+                </table>
+                <button type="submit" >update</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock profile_update %}
+
+
+

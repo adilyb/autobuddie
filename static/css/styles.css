@@ -1,0 +1,370 @@
+* {
+
+    box-sizing: border-box;
+}
+/* navbar  */
+.searchbar { 
+    width: 450px;
+    margin-left: 10px;
+}
+
+.languagebar{
+    margin-left: 40px;
+}
+.search-bar-button{
+
+    padding: 0px 20px;
+}
+/* contact us page */
+.input-bar{
+    display: block;
+    width: 400px;
+    margin: 16px 0;
+    padding: 10px 30px;
+    outline: none;
+
+}
+
+#contact-message{
+
+    height: 150px;
+    
+
+}
+
+.input-btn{
+    width: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 0 5px 5px 0;
+    float: right;
+
+}
+.contactus .card{
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: rgb(170, 122, 122);
+    margin-top:20px;
+    padding: 20px;
+
+}
+/* side bar */
+
+.sidebar{
+    
+    margin-top: 56px;
+    width: 250px;
+    
+  }
+.accordion-item button:hover{
+    background-color: #198754;
+    color: white;
+}
+
+  /* home product list */
+  .home--products-list{
+      height: calc( 100vh - 56px);
+      overflow: hidden;
+      overflow-y: auto;
+  }
+
+
+
+
+  /* login page */
+  .login-page {
+    background-image: url("../images/log.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+  }
+  
+  .login-page form {
+    padding: 0 40px;
+  }
+  
+  .login-page form p input {
+    width: 100%;
+    padding: 0 5px;
+    height: 30px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  
+  .login-page form p input {
+    border-bottom: 1px solid black;
+  }
+  
+  .login-page .forgot-pass {
+    margin: -5px 0 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .login-page .forgot-pass:hover {
+    text-decoration: underline;
+    color: #a6a6a6;
+  }
+  
+  .login-page button {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  
+  .login-page .register {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .login-page .register p:hover {
+    color: #a6a6a6;
+  }
+  
+  .login-page .register a {
+    text-decoration: none;
+  }
+  
+  .login-page .register a:hover {
+    text-decoration: underline;
+  }
+  
+  .login-page li {
+    font-size: 12px;
+    /* color: orangered; */
+  }
+  
+  .login-page li::marker {
+    color: black;
+  }
+  
+  .login-page .social-link button {
+    margin: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .login-page .facebook-btn {
+    background-color: #3b5998;
+    color: white;
+    width: 40px;
+  }
+  
+  .login-page .github-btn {
+    background-color: black;
+    color: white;
+    width: 40px;
+  }
+  
+  .login-page .google-btn {
+    background-color: #dd4b39;
+    color: white;
+    width: 40px;
+  }
+  
+  .login-page .errorlist.nonfield {
+    position: relative;
+    list-style: none;
+    padding: 20px;
+    border-radius: 10px;
+    color: red;
+    background-color: #ececec;
+  }
+
+
+
+
+/* registration page */
+.signup-page {
+    background-image: url("../images/log.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  /* .signup-page .card {
+    padding-bottom: 20px;
+    -webkit-box-shadow: 3px 6px 57px 31px rgba(0, 0, 0, 0.34);
+    -moz-box-shadow: 3px 6px 57px 31px rgba(0, 0, 0, 0.34);
+    box-shadow: 3px 6px 57px 31px rgba(0, 0, 0, 0.34);
+  } */
+  
+  .signup-page .card-body {
+    padding: 30px 0 0 0;
+  }
+  
+  .signup-page h4 {
+    padding: 20px;
+    border-bottom: 1px solid silver;
+  }
+  
+  .signup-page form {
+    padding: 0 40px;
+  }
+  
+  .signup-page form p input {
+    width: 100%;
+    padding: 0 5px;
+    height: 30px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+    border-bottom: 2px solid silver;
+  }
+  
+  .signup-page .helptext {
+    font-size: 12px;
+  }
+  
+  .signup-page li {
+    font-size: 12px;
+    /* color: orangered; */
+  }
+  
+  .signup-page li::marker {
+    color: black;
+  }
+  
+  .signup-page .social-link button {
+    margin: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .signup-page .facebook-btn {
+    background-color: #3b5998;
+    color: white;
+    width: 40px;
+  }
+  
+  .signup-page .github-btn {
+    background-color: black;
+    color: white;
+    width: 40px;
+  }
+  
+  .signup-page .google-btn {
+    background-color: #dd4b39;
+    color: white;
+    width: 40px;
+  }
+
+/* footer */
+
+.Copyright{
+
+    background-color: rgb(233, 230, 230);
+}
+
+/* password reset form */
+
+.reset-password {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .reset-password input {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid silver;
+  }
+  
+  .reset-password button {
+    padding: 10px 20px;
+    background-color: #2d6760;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .reset-password button:hover {
+    background-color: #1b3d39;
+    color: white;
+  }
+  
+  .reset-password .lock-icon {
+    font-size: 100px;
+  }
+  
+  .confirm-password {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .confirm-password input {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid silver;
+    padding: 0 5px;
+  }
+  
+  .confirm-password ul {
+    list-style: none;
+    background-color: #f8d7da;
+    border-radius: 10px;
+    padding: 20px;
+    color: #87242d;
+  }
+  
+  .confirm-password button {
+    padding: 10px 20px;
+    background-color: #2d6760;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .confirm-password button:hover {
+    background-color: #1b3d39;
+    color: white;
+  }
+  
+  .complete-password {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .complete-password a {
+    padding: 10px 20px;
+    background-color: #2d6760;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .complete-password a:hover {
+    background-color: #1b3d39;
+    color: white;
+  }
+  
+  .complete-password .alr {
+    width: 400px;
+  }
+
+  /* login button */
+  .login-button{
+    background-color: #198754;
+    color: white;
+  }
+
+  /* signup button */
+  .signup-button{
+    background-color: #198754;
+    color: white;
+  }
+
+  

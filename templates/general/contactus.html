@@ -1,0 +1,40 @@
+{% extends 'index.html' %} 
+
+{% load static %}
+
+{% block contactus %}
+{% include 'includes/navbar.html' %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-auto p-0">{% include 'includes/sidebar.html' %}</div>
+    <div class="col bg-light" style="padding-top: 64px;">
+      <div class="container">
+        
+
+        <div  class='contactus  container-fluid'>
+          <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-lg-6 d-flex justify-content-center">
+              <div class="card">
+                <div class="card-body">
+                  <h3 class="d-flex justify-content-center text-white mt-5">contact us</h3>
+                  <form method="post">
+                      {% csrf_token %}
+                      <input type="text" class='input-bar' id="name" placeholder="name" />
+                      <input type="email" class='input-bar' name="email" id="email" placeholder="email"/>
+                      <textarea name="message" class='input-bar' id="contact-message" cols="30" rows="10" placeholder="type.."></textarea>
+                      <button type="submit" class='input-btn'>send</button>
+                  </form>
+                </div>
+              </div>
+            </div>            
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock contactus %}
+
+

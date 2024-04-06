@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block product_delete %}
+
+<div class="contaniner-fluid mt-5">
+    <div class="row ">
+        <div class="col-lg-6">
+            <form action="" enctype="multipart/form-data" method="post">
+                {% csrf_token %}
+                Are you really want to delete?
+                <button class="float-end"  type="submit">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock product_delete %}
